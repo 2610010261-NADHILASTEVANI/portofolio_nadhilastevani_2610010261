@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Katalog digital unit usaha HMP-TI ITS: F&B, Percetakan & Dokumen, Konsinyasi, dan Jasa Kreatif.">
+  <title>Katalog HMP-TI ITS - Beranda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER: bilah menu ala BIOS ========== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#beranda" class="brand" aria-label="HMP-TI ITS, kembali ke beranda">[ HMP-TI ITS ]</a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Buka menu">MENU</button>
+
+      <nav id="mainNav" class="main-nav" aria-label="Navigasi utama">
+        <a href="#fnb">F&amp;B</a>
+        <a href="#percetakan">Percetakan</a>
+        <a href="#konsinyasi">Konsinyasi</a>
+        <a href="#kreatif">Jasa Kreatif</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <h1>Semua kebutuhan kampusmu tersambung di satu board</h1>
+          <p>
+            Dari minuman dingin sebelum kelas, print tugas menit-menit terakhir,
+            sampai desain poster acaramu. Empat unit usaha HMP-TI ITS
+            bekerja seperti komponen komputer: berbeda tugas, satu tujuan.
+          </p>
+          <div class="hero-actions">
+            <a href="#katalog" class="btn btn-primary">Lihat Katalog</a>
+            <a href="#kontak" class="btn btn-ghost">Cara Pesan</a>
+          </div>
+
+          <div class="window boot" aria-hidden="true">
+            <div class="titlebar">
+              <span class="title">C:\HMP-TI\boot.log</span>
+              <span class="wbtns"><i>_</i><i>&#9633;</i><i>&times;</i></span>
+            </div>
+            <pre class="boot-body"><code id="typedCode"></code><span class="cursor"></span></pre>
+          </div>
+        </div>
+
+        <!-- Ilustrasi motherboard; empat slot RAM = empat unit usaha -->
+        <div class="board-wrap">
+          <svg class="board" viewBox="0 0 440 380" role="img" aria-label="Ilustrasi motherboard dengan empat slot untuk empat unit usaha">
+            <!-- papan -->
+            <rect x="4" y="4" width="432" height="372" rx="8" fill="#4b3a9a" stroke="#ffc4a3" stroke-width="3"/>
+            <g fill="#1a1240" stroke="#ffc4a3" stroke-width="2">
+              <circle cx="24" cy="24" r="7"/><circle cx="416" cy="24" r="7"/>
+              <circle cx="24" cy="356" r="7"/><circle cx="416" cy="356" r="7"/>
+            </g>
+
+            <!-- jalur tembaga bergerak -->
+            <g fill="none" stroke="#ffc4a3" stroke-width="3" stroke-linejoin="round">
+              <path class="trace" d="M210 110H265L280 125V250H300V222"/>
+              <path class="trace" d="M210 135H255L270 150V262H330V222"/>
+              <path class="trace" d="M210 160H245L260 175V274H360V222"/>
+              <path class="trace" d="M210 185H235L250 200V286H390V222"/>
+            </g>
+
+            <!-- port I/O -->
+            <rect x="18" y="110" width="36" height="90" fill="#2c3337" stroke="#9aa5ab" stroke-width="2"/>
+            <g fill="#0a0d0f">
+              <rect x="24" y="118" width="24" height="10"/><rect x="24" y="136" width="24" height="10"/>
+              <rect x="24" y="154" width="24" height="10"/><rect x="24" y="172" width="24" height="10"/>
+            </g>
+            <text x="36" y="194" font-family="monospace" font-size="7" fill="#9aa5ab" text-anchor="middle">I/O</text>
+
+            <!-- CPU -->
+            <rect x="66" y="86" width="148" height="148" fill="#14181b" stroke="#9aa5ab" stroke-width="2" stroke-dasharray="4 3"/>
+            <rect x="74" y="94" width="132" height="132" fill="#2a2f33" stroke="#cfd6da" stroke-width="2"/>
+            <rect x="92" y="112" width="96" height="96" fill="#c9ced1" stroke="#667177" stroke-width="2"/>
+            <text x="140" y="158" font-family="monospace" font-size="17" font-weight="700" fill="#1b1f22" text-anchor="middle">HMP-TI</text>
+            <text x="140" y="178" font-family="monospace" font-size="10" fill="#3b4348" text-anchor="middle">ITS 2026</text>
+
+            <!-- kapasitor -->
+            <g fill="#1b1f22" stroke="#cfd6da" stroke-width="2">
+              <circle cx="232" cy="52" r="9"/><circle cx="254" cy="52" r="9"/>
+              <circle cx="232" cy="76" r="9"/><circle cx="254" cy="76" r="9"/>
+            </g>
+            <g stroke="#cfd6da" stroke-width="1.5">
+              <path d="M228 52h8M232 48v8"/><path d="M250 52h8M254 48v8"/>
+              <path d="M228 76h8M232 72v8"/><path d="M250 76h8M254 72v8"/>
+            </g>
+
+            <!-- chip BIOS + baterai CMOS -->
+            <rect x="190" y="244" width="46" height="30" fill="#0a0d0f" stroke="#667177" stroke-width="2"/>
+            <text x="213" y="263" font-family="monospace" font-size="8" fill="#7ff0d4" text-anchor="middle">BIOS</text>
+            <circle cx="140" cy="262" r="19" fill="#c9ced1" stroke="#667177" stroke-width="2"/>
+            <text x="140" y="266" font-family="monospace" font-size="9" fill="#1b1f22" text-anchor="middle">3V</text>
+
+            <!-- slot PCIe -->
+            <rect x="40" y="310" width="230" height="16" fill="#0a0d0f" stroke="#9aa5ab" stroke-width="2"/>
+            <rect x="40" y="340" width="300" height="16" fill="#0a0d0f" stroke="#9aa5ab" stroke-width="2"/>
+            <text x="276" y="322" font-family="monospace" font-size="8" fill="#e4dcff">PCIe x16</text>
+            <text x="346" y="352" font-family="monospace" font-size="8" fill="#e4dcff">PCIe x1</text>
+
+            <!-- slot RAM = unit usaha (klik untuk menuju unit) -->
+            <g font-family="monospace" font-size="9" text-anchor="middle" fill="#f3eeff">
+              <text x="300" y="30">F&amp;B</text>
+              <text x="330" y="30">CTK</text>
+              <text x="360" y="30">KNS</text>
+              <text x="390" y="30">KRF</text>
+            </g>
+            <a href="#fnb" aria-label="Menuju Unit F&amp;B">
+              <rect class="slot" x="290" y="40" width="20" height="180" fill="#0a0d0f" stroke="#ffc4a3" stroke-width="2"/>
+              <rect x="294" y="46" width="12" height="6" fill="#ffc4a3"/>
+            </a>
+            <a href="#percetakan" aria-label="Menuju Unit Percetakan">
+              <rect class="slot" x="320" y="40" width="20" height="180" fill="#0a0d0f" stroke="#8fd3ff" stroke-width="2"/>
+              <rect x="324" y="46" width="12" height="6" fill="#8fd3ff"/>
+            </a>
+            <a href="#konsinyasi" aria-label="Menuju Unit Konsinyasi">
+              <rect class="slot" x="350" y="40" width="20" height="180" fill="#0a0d0f" stroke="#7ff0d4" stroke-width="2"/>
+              <rect x="354" y="46" width="12" height="6" fill="#7ff0d4"/>
+            </a>
+            <a href="#kreatif" aria-label="Menuju Unit Jasa Kreatif">
+              <rect class="slot" x="380" y="40" width="20" height="180" fill="#0a0d0f" stroke="#ff9ad5" stroke-width="2"/>
+              <rect x="384" y="46" width="12" height="6" fill="#ff9ad5"/>
+            </a>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== KATALOG ========== -->
+    <section class="catalog" id="katalog">
+      <div class="container">
+        <div class="section-head">
+          <h2>Katalog Unit Usaha</h2>
+          <p>Empat unit, empat komponen. Klik tombol pada tiap jendela untuk melihat info pemesanan.</p>
+        </div>
+
+        <div class="unit-grid">
+
+          <!-- UNIT 1: F&B (RAM) -->
+          <article class="window unit unit-amber" id="fnb">
+            <div class="titlebar">
+              <span class="title">RAM_FNB.exe</span>
+              <span class="wbtns" aria-hidden="true"><i>_</i><i>&#9633;</i><i>&times;</i></span>
+            </div>
+            <div class="unit-body">
+              <div class="part" aria-hidden="true">
+                <svg viewBox="0 0 200 70" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <pattern id="goldRam" width="5" height="12" patternUnits="userSpaceOnUse"><rect width="3.5" height="12" fill="#ffc4a3"/></pattern>
+                  </defs>
+                  <rect x="2" y="2" width="196" height="52" rx="3" fill="#6a4fd1" stroke="#2a1b66" stroke-width="2"/>
+                  <g fill="#15191c" stroke="#000" stroke-width="1.5">
+                    <rect x="14" y="10" width="34" height="30"/><rect x="54" y="10" width="34" height="30"/>
+                    <rect x="112" y="10" width="34" height="30"/><rect x="152" y="10" width="34" height="30"/>
+                  </g>
+                  <g fill="#5b6770">
+                    <rect x="20" y="18" width="22" height="3"/><rect x="60" y="18" width="22" height="3"/>
+                    <rect x="118" y="18" width="22" height="3"/><rect x="158" y="18" width="22" height="3"/>
+                  </g>
+                  <rect x="2" y="54" width="196" height="12" fill="url(#goldRam)"/>
+                  <rect x="95" y="54" width="6" height="12" fill="#140e2e"/>
+                </svg>
+              </div>
+              <code class="spec">slot=DIMM_1 status=ONLINE</code>
+              <h3>Unit F&amp;B</h3>
+              <p>
+                Camilan dan minuman dingin untuk menemani jam kuliah dan begadang
+                mengerjakan tugas. Harga bersahabat untuk kantong mahasiswa.
+              </p>
+              <ul class="price-list">
+                <li><span>Good Day</span><b>Rp7.000</b></li>
+                <li><span>Teh Pucuk</span><b>Rp5.000</b></li>
+                <li><span>Pocari</span><b>Rp7.000</b></li>
+                <li><span>Choco Pie</span><b>Rp3.000</b></li>
+                <li><span>Beng-Beng</span><b>Rp3.000</b></li>
+              </ul>
+              <button class="btn btn-unit" data-unit="fnb">Detail Pemesanan</button>
+            </div>
+          </article>
+
+          <!-- UNIT 2: PERCETAKAN (HDD) -->
+          <article class="window unit unit-cyan" id="percetakan">
+            <div class="titlebar">
+              <span class="title">HDD_PERCETAKAN.exe</span>
+              <span class="wbtns" aria-hidden="true"><i>_</i><i>&#9633;</i><i>&times;</i></span>
+            </div>
+            <div class="unit-body">
+              <div class="part" aria-hidden="true">
+                <svg viewBox="0 0 200 100" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+                  <rect x="20" y="4" width="160" height="92" rx="6" fill="#b8bec2" stroke="#444" stroke-width="2"/>
+                  <g fill="#6b7378">
+                    <circle cx="30" cy="14" r="3"/><circle cx="170" cy="14" r="3"/>
+                    <circle cx="30" cy="86" r="3"/><circle cx="170" cy="86" r="3"/>
+                  </g>
+                  <circle cx="85" cy="50" r="34" fill="#e8ecef" stroke="#666" stroke-width="2"/>
+                  <circle cx="85" cy="50" r="22" fill="none" stroke="#c4cacd" stroke-width="2"/>
+                  <circle cx="85" cy="50" r="10" fill="#888"/><circle cx="85" cy="50" r="3" fill="#111"/>
+                  <path d="M150 20L100 45" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+                  <circle cx="150" cy="20" r="6" fill="#555"/>
+                  <rect x="122" y="62" width="50" height="26" fill="#fff" stroke="#666"/>
+                  <text x="147" y="79" font-family="monospace" font-size="9" text-anchor="middle" fill="#222">DOC.DAT</text>
+                </svg>
+              </div>
+              <code class="spec">drive=D: status=ONLINE</code>
+              <h3>Unit Percetakan &amp; Dokumen</h3>
+              <p>
+                Print, fotokopi, penjilidan, dan pengetikan dokumen. Cocok untuk
+                laporan, makalah, dan berkas yang harus selesai hari ini.
+              </p>
+              <ul class="price-list">
+                <li><span>Print/FC hitam putih</span><b>Rp500</b></li>
+                <li><span>Print/FC warna</span><b>Rp1.000</b></li>
+                <li><span>Jilid</span><b>Rp2.000</b></li>
+                <li><span>Print stiker</span><b>Rp3.000</b></li>
+                <li><span>Print/FC sertifikat</span><b>Rp3.000</b></li>
+              </ul>
+              <button class="btn btn-unit" data-unit="percetakan">Detail Pemesanan</button>
+            </div>
+          </article>
+
+          <!-- UNIT 3: KONSINYASI (FLASHDISK USB) -->
+          <article class="window unit unit-green" id="konsinyasi">
+            <div class="titlebar">
+              <span class="title">USB_KONSINYASI.exe</span>
+              <span class="wbtns" aria-hidden="true"><i>_</i><i>&#9633;</i><i>&times;</i></span>
+            </div>
+            <div class="unit-body">
+              <div class="part" aria-hidden="true">
+                <svg viewBox="0 0 200 70" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+                  <rect x="4" y="18" width="62" height="34" fill="#c9ced1" stroke="#555" stroke-width="2"/>
+                  <rect x="12" y="26" width="46" height="18" fill="#6b7378"/>
+                  <rect x="18" y="32" width="8" height="6" fill="#111"/><rect x="40" y="32" width="8" height="6" fill="#111"/>
+                  <rect x="64" y="10" width="124" height="50" rx="10" fill="#1c4fd8" stroke="#0a1f6b" stroke-width="2"/>
+                  <rect x="72" y="16" width="108" height="8" rx="4" fill="#3b73ff"/>
+                  <text x="80" y="46" font-family="monospace" font-size="13" font-weight="700" fill="#fff">HMP-TI</text>
+                  <circle cx="170" cy="40" r="4" fill="#7ff0d4"/>
+                </svg>
+              </div>
+              <code class="spec">port=USB3 status=ONLINE</code>
+              <h3>Unit Konsinyasi</h3>
+              <p>
+                Punya produk buatan sendiri? Titipkan di sini dan biarkan teman-teman
+                sesama mahasiswa menemukannya. Kamu fokus berkarya, kami bantu menjual.
+              </p>
+              <ul class="tag-list">
+                <li>Merchandise</li>
+                <li>Kerajinan</li>
+                <li>Makanan ringan</li>
+                <li>Aksesori</li>
+              </ul>
+              <button class="btn btn-unit" data-unit="konsinyasi">Detail Titip Jual</button>
+            </div>
+          </article>
+
+          <!-- UNIT 4: JASA KREATIF (GPU) -->
+          <article class="window unit unit-magenta" id="kreatif">
+            <div class="titlebar">
+              <span class="title">GPU_KREATIF.exe</span>
+              <span class="wbtns" aria-hidden="true"><i>_</i><i>&#9633;</i><i>&times;</i></span>
+            </div>
+            <div class="unit-body">
+              <div class="part" aria-hidden="true">
+                <svg viewBox="0 0 200 90" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <pattern id="goldGpu" width="5" height="12" patternUnits="userSpaceOnUse"><rect width="3.5" height="12" fill="#ffc4a3"/></pattern>
+                  </defs>
+                  <rect x="4" y="6" width="192" height="62" rx="4" fill="#1d2226" stroke="#000" stroke-width="2"/>
+                  <rect x="4" y="6" width="192" height="6" fill="#ff9ad5"/>
+                  <g transform="translate(55 42)">
+                    <circle r="24" fill="#0c0f11" stroke="#555" stroke-width="2"/>
+                    <g class="fan">
+                      <ellipse rx="20" ry="6" fill="#4a5259"/>
+                      <ellipse rx="20" ry="6" fill="#4a5259" transform="rotate(60)"/>
+                      <ellipse rx="20" ry="6" fill="#4a5259" transform="rotate(120)"/>
+                    </g>
+                    <circle r="5" fill="#ff9ad5"/>
+                  </g>
+                  <g transform="translate(145 42)">
+                    <circle r="24" fill="#0c0f11" stroke="#555" stroke-width="2"/>
+                    <g class="fan">
+                      <ellipse rx="20" ry="6" fill="#4a5259"/>
+                      <ellipse rx="20" ry="6" fill="#4a5259" transform="rotate(60)"/>
+                      <ellipse rx="20" ry="6" fill="#4a5259" transform="rotate(120)"/>
+                    </g>
+                    <circle r="5" fill="#ff9ad5"/>
+                  </g>
+                  <rect x="24" y="68" width="120" height="12" fill="url(#goldGpu)"/>
+                </svg>
+              </div>
+              <code class="spec">bus=PCIe_x16 status=ONLINE</code>
+              <h3>Unit Jasa Kreatif</h3>
+              <p>
+                Desain grafis, foto dan video editing, hingga pembuatan web sederhana
+                untuk organisasi, acara, dan usahamu.
+              </p>
+              <ul class="tag-list">
+                <li>Desain grafis</li>
+                <li>Photo editing</li>
+                <li>Video editing</li>
+                <li>Web sederhana</li>
+              </ul>
+              <button class="btn btn-unit" data-unit="kreatif">Detail Pemesanan</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LAYANAN TEKNIS ========== -->
+    <section class="services">
+      <div class="container services-wrap">
+        <div class="services-text">
+          <h2>Laptop bermasalah? Tanya kami dulu.</h2>
+          <p>
+            Selain empat unit di atas, pengurus HMP-TI juga membantu konsultasi
+            laptop/PC, instalasi OS maupun aplikasi, dan menjual ATK.
+          </p>
+        </div>
+        <ul class="cmds">
+          <li>konsultasi --laptop --pc</li>
+          <li>install --os</li>
+          <li>install --aplikasi</li>
+          <li>jual --atk --snack</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== KONTAK ========== -->
+    <section class="contact" id="kontak">
+      <div class="container">
+        <div class="window contact-card">
+          <div class="titlebar">
+            <span class="title">hubungi.exe</span>
+            <span class="wbtns" aria-hidden="true"><i>_</i><i>&#9633;</i><i>&times;</i></span>
+          </div>
+          <div class="contact-body">
+            <h2>Mau pesan atau titip jual?</h2>
+            <p>
+              Kirim pesan lewat Instagram atau datang langsung ke ruang HMP-TI.
+              Sebutkan unit yang kamu butuhkan supaya pengurus bisa membalas lebih cepat.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://www.instagram.com/its_hmpti" target="_blank" rel="noopener">Buka @its_hmpti</a>
+              <button class="btn btn-ghost" data-unit="umum">Info Kontak</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER: taskbar ========== -->
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <a href="#beranda" class="start-btn">&#9632; Start</a>
+      <p>&copy; 2026 HMP-TI ITS. Dibuat dengan HTML, CSS, dan JavaScript.</p>
+      <time class="clock" id="clock">--:--:--</time>
+    </div>
+  </footer>
+
+  <!-- ========== MODAL DETAIL ========== -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="window modal-card">
+      <div class="titlebar">
+        <span class="title" id="modalFile">detail.txt</span>
+        <button class="modal-close" id="modalClose" aria-label="Tutup">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <dl class="modal-info">
+          <dt>jam_operasional</dt>
+          <dd id="modalHours"></dd>
+          <dt>cara_pesan</dt>
+          <dd id="modalHow"></dd>
+          <dt>kontak</dt>
+          <dd id="modalContact"></dd>
+        </dl>
+        <a class="btn btn-primary" id="modalLink" href="https://www.instagram.com/its_hmpti" target="_blank" rel="noopener">Chat lewat Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
